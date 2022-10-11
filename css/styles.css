@@ -8,6 +8,9 @@
   --rgba-color: rgba(255, 255, 255, 0.6);
   --black-color: #000000;
   --hover-btn: #188ce8;
+  --card-set-gap: 30px;
+  --card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 p,
@@ -62,7 +65,6 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
-  outline: 2px solid orange;
 }
 /* ---------HEADER----------------- */
 
@@ -79,6 +81,7 @@ body {
 .header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header-navigation {
@@ -88,38 +91,27 @@ body {
 
 .header-logo {
   display: block;
-  padding-top: 24px;
-  padding-bottom: 25px;
+  margin-right: 93px;
 }
 
 .site-nav {
   display: flex;
-  margin-left: 93px;
+  gap: 50px;
 }
 
-.site-nav .header-item:not(:last-child) {
-  margin-right: 50px;
+.site-nav .link,
+.header-contacts .link {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .site-nav .link {
   display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
 }
 
-.site-nav,
-.header-contacts {
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
 .logo-blue {
   color: var(--accent-color);
 }
-
-/* .logo.link:hover,
-.logo.link:focus {
-  color: var(--accent-color);
-} */
 
 .header-mail,
 .header-tel {
@@ -146,7 +138,7 @@ body {
 }
 
 .header {
-  border: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
 }
 
 /* header-contacts */
@@ -154,15 +146,17 @@ body {
 .header-contacts {
   display: flex;
   margin-left: auto;
+  gap: 50px;
 }
 
-.header-contacts .header-item + .header-item {
-  margin-left: 50px;
-}
 /*--------------HERO------------*/
 .hero,
 .footer {
   background-color: var(--footer-bg-color);
+}
+
+.hero {
+  text-align: center;
 }
 
 .hero-title {
@@ -174,12 +168,8 @@ body {
 
   color: var(--white-color);
 
-  width: 696px;
   margin-top: 0;
-  margin-right: auto;
   margin-bottom: 30px;
-  margin-left: auto;
-  text-align: center;
 }
 
 .hero {
@@ -188,7 +178,7 @@ body {
 }
 
 .hero-btn {
-  display: block;
+  display: inline-block;
   margin: 0 auto;
   padding: 10px 32px;
 
@@ -212,7 +202,7 @@ body {
   color: var(--white-color);
   background-color: var(--hover-btn);
 }
-/* ---------SECTION------------- */
+/* -------SECTION--FEATURE------------- */
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -254,12 +244,11 @@ body {
 
   color: var(--secondary-text-color);
 }
-/* ----------ABOUT--------- */
+/* ----------SECTION--ABOUT--------- */
 
 .list-about {
   display: flex;
   gap: 30px;
-  padding-bottom: 94px;
 }
 
 .about-item {
@@ -271,6 +260,10 @@ body {
   line-height: 1.17;
   margin-bottom: 50px;
   text-align: center;
+}
+
+.about {
+  padding-bottom: 94px;
 }
 /* ---------SECETION TEAM---------- */
 .section.team {
@@ -359,8 +352,25 @@ body {
 }
 
 /* -------css for portfolio.html------------- */
+.portfolio {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 
+.jump-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
 .list-btn {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 6px 22px;
+  min-width: 73px;
+  border: 1px solid transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
   font-family: inherit;
   font-style: normal;
   font-weight: 500;
@@ -374,29 +384,37 @@ body {
   cursor: pointer;
   background-color: var(--secondary-bg-color);
 }
+
 .list-btn:hover,
 .list-btn:focus {
   color: var(--white-color);
   background-color: var(--accent-color);
 }
 
-.flex-container {
+/* -----CONTAINER--PORTFOLIO------ */
+
+.card-set {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -1 * var(--card-set-gap);
+  margin-top: -1 * var(--card-set-gap);
 }
 
-.flex-element {
-  width: 370px;
-  margin-right: 30px;
-  margin-bottom: 30px;
+.card-set > .flex-element {
+  flex-basis: calc(100% / 3 - 36px);
+  margin-left: var(--card-set-gap);
+  margin-top: var(--card-set-gap);
+  background: var(--white-color);
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.flex-element:nth-child(3n) {
-  margin-right: 0;
+.portfolio-wrap {
+  padding: 20px 24px;
 }
 
-.flex-element:nth-last-child(-n + 3) {
-  margin-bottom: 0;
+.list-header {
+  margin-bottom: 4px;
 }
 
 .list-header {
