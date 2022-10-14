@@ -361,7 +361,6 @@ body {
 .list-btn {
   display: inline-block;
   padding: 6px 22px;
-  min-width: 73px;
   border: 1px solid transparent;
 
   font-family: inherit;
